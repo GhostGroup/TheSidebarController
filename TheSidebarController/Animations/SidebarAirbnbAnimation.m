@@ -43,7 +43,6 @@
     sidebarView.layer.transform = sidebarTransform;
     
     sidebarTransform = CATransform3DIdentity;
-    sidebarTransform = CATransform3DScale(sidebarTransform, 1.0, 1.0, 1.0);
     
     if(side == LeftSide)
     {
@@ -57,7 +56,6 @@
         contentTransform = CATransform3DScale(contentTransform, 0.6, 0.6, 0.6);
         contentTransform = CATransform3DRotate(contentTransform, DEG2RAD(45), 0.0, 1.0, 0.0);
     }
-    
     
     // Animate content view
     [UIView animateWithDuration:animationDuration
@@ -85,11 +83,7 @@
 {
     // Animation settings for content view
     CATransform3D contentTransform = CATransform3DIdentity;
-    contentTransform.m34 = -1.0f / 800.0f;
     contentView.layer.zPosition = 100;
-    contentTransform = CATransform3DTranslate(contentTransform, 0.0, 0.0, 0.0);
-    contentTransform = CATransform3DScale(contentTransform, 1.0, 1.0, 1.0);
-    contentTransform = CATransform3DRotate(contentTransform, DEG2RAD(0), 0.0, 1.0, 0.0);
     
     // Animation settings for menu view
     __block CATransform3D sidebarTransform = CATransform3DIdentity;
